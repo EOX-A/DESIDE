@@ -31,7 +31,7 @@
 :pdf-stylesdir: resources/themes
 :pdf-style: custom
 :media: screen
-:title-logo-image: image::DESIDE.png[top=5%, align=right, pdfwidth=6.96in]
+:title-logo-image: image::DESIDE.png[top=5%, align=right]
 
 = {doc-title}: {doc-num}
 

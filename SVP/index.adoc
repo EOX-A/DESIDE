@@ -6,7 +6,7 @@
 :component-name: DESIDE
 :component-github-name: https://github.com/EOX-A/DESIDE
 :component-github-pages: https://eox-a.github.io/DESIDE
-:doc-title: Software Requirements Specification
+:doc-title: Software Verification and Validation Plan
 :doc-num: D-XXX
 :revnumber: 0.1
 :revdate: 11/12/2023
@@ -49,7 +49,7 @@ include::02.overview/00.overview.adoc[]
 
 <<<
 
-include::03.requirements/00.requirements.adoc[]
+include::03.verification/00.verification.adoc[]
 
 '''
 
