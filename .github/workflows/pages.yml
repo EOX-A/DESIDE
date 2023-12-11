@@ -35,7 +35,7 @@ jobs:
       name: Build the pages
       with:
         image: deside-deliverables
-        run: /opt/documents/bin/generate-docs.sh
+        run: ./bin/generate-docs.sh
     - uses: actions/upload-artifact@v3
       with:
         name: output
