@@ -15,15 +15,15 @@ echo '<!DOCTYPE html>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Documents</title>
   </head>
   <body>
-    <h1>Document</h1>
+    <h1>Documents</h1>
     <div>
       <ul>' >> output/index.html
 
 
-DOCS="${BUILD_DOCS:-SRS}"
+DOCS="${BUILD_DOCS:-SRS SVVP}"
 
 for doc in $DOCS ; do
   echo "Building $doc"
