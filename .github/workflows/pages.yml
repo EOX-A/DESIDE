@@ -26,17 +26,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: docker/build-push-action@v2
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Build docker image
+      uses: docker/build-push-action@v2
       with:
         tags: deside-deliverables
         push: false
-    - uses: addnab/docker-run-action@v3
-      name: Build the pages
+    - name: Build pages
+      uses: addnab/docker-run-action@v3
       with:
         image: deside-deliverables
-        run: ./bin/generate-docs.sh
-    - uses: actions/upload-artifact@v3
+        options: -v ${{ github.workspace }}:/opt/documents
+        run: /opt/documents/bin/generate-docs.sh
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
       with:
         name: output
         path: './output'
