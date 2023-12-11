@@ -27,10 +27,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag deside-deliverables
-    - name: Build the pages
-      run: docker run --rm -it -v $PWD/:/opt/documents/ deside-deliverables bash /opt/documents/bin/generate-docs.sh
+    - uses: docker/build-push-action@v2
+      with:
+        tags: deside-deliverables
+        push: false
+    - uses: addnab/docker-run-action@v3
+      name: Build the pages
+      with:
+        image: deside-deliverables
+        run: /opt/documents/bin/generate-docs.sh
     - uses: actions/upload-artifact@v3
       with:
         name: output
